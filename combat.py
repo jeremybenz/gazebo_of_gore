@@ -92,10 +92,10 @@ if hero_hp >= monster_hp:
 	time.sleep(20)
 	print " "
 	print "King Crackle places a crown upon your head, and Pope Popsicle VI unites you and Princess Sweetums in holy matrimony before the entire kingdom."
-	time.sleep(12)
+	time.sleep(8)
 	print " "
 	print "You perish of diabetes two months later."
-	time.sleep(5)
+	time.sleep(3)
 	print " "
 	print "Well done, Champion!"
 	
