@@ -1,3 +1,3 @@
 **Gazebo of Gore**
 
-This is a small rpg project I am working on to help learn Python.
+A playground to work on my Python chops.
