@@ -2,6 +2,7 @@
 
 from random import randint
 import time
+import console
 
 #Initial Stats
 hero_hp = 18
@@ -24,6 +25,7 @@ while (monster_hp > 0):
 	if (hero_hp > 0):
 		print " "
 		action = raw_input("What will you do, champion? " + "Your popsicle frame has " + str(hero_hp) + " hit points remaining. You have " + str(gumdrops) + " gumdrops in your fruit leather bandolier. Your foe has " + str(monster_hp) + " hit points. You can (s)lash, (l)unge, or (e)at a gumdrop.")
+		console.clear()
 		if action == "s":
 			monster_damage = randint(2,4)
 			monster_hp = monster_hp - monster_damage
