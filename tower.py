@@ -13,7 +13,7 @@ import console
 #bot = ("+++++++\n")
 #print(top + row1 + row2 + row3 + row4 + row5 + bot)
 
-# Name, Level, X position, Y Position, Hit Points, Max Hit Points, Magic Points, Max Magic Points, Evasions, Defense, Attack, Flask Fill Level, Amulet Charge, Spells, Equipped Weapon, Equipped Armor, Equipped Shield, Cloak, Inventory
+# Name, Level, X position, Y Position, Hit Points, Max Hit Points, Magic Points, Max Magic Points, Evasions, Defense, Attack, Flask Fill Level, Amulet Charge, Spells, Equipped Weapon, Equipped Armor, Equipped Shield, Equipped Cloak, Inventory
 class Player(object):
 	def __init__(self, name, lv, x, y, hp, mhp, mp, mmp, ev, de, at, fl, am, sp, we, ar, sh, cl, inv):
 		self.name = name
@@ -59,19 +59,28 @@ class Item(object):
 
 #	Equipped?, Attack Bonus, Defense Bonus
 class Weapon(Item):
-	def __init__(self, eq, atb, deb):
+	def __init__(self, eq, atb, evb):
 		self.eq = eq
 		self.atb = atb
-		self.deb = deb
+		self.evb = evb
 		
 class Armor(Item):
-	def __init__(self, eq, deb, hpb, ):
+	def __init__(self, eq, deb, hpb):
 		self.eq = eq
 		self.deb = deb
 		self.hpb = hpb
 		
 class Shield(Item):
-	def __init__(self, eq)
+	def __init__(self, eq, deb, evb):
+		self.eq = eq
+		self.deb = deb
+		self.evb = evb
+
+class Cloak(Item):
+	def __init__(self, eq, mpb, evb):
+		self.evb = evb
+		self.mpb = mpb
+		self.evb = evb 
 		
 class 
 
