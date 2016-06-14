@@ -2,7 +2,8 @@
 
 import time
 import console
-	
+
+#Classes	
 class Room():
 	def __init__(self, name, description, x_pos, y_pos, n_exit, e_exit, s_exit, w_exit):
 		self.name = name
@@ -20,7 +21,8 @@ class Hero(object):
 		self.moving = moving
 		self.x_pos = x_pos
 		self.y_pos = y_pos
-	
+
+#Class Members	
 hero = Hero("Hero", "moving", 0, 0)
 
 ent = Room("Entrance", "This is the entrance to the tower.", 0, 0, False, False, True, False)
@@ -41,6 +43,7 @@ rec = Room("Reception Room", "This room is obviously designed to receive prestig
 
 gal = Room("Gallery", "Numerous paintings adorn the walls. You take a moment to thoughtfully consider each specimen.", 2, 2, True, False, False, False)
 
+#Prompt Map Variables
 n_exit = ("  #  \n  |  ")
 no_n_exit = ("    \n     ")
 e_exit = ("  @-#")
@@ -49,11 +52,12 @@ ew_exit = ("#-a-#")
 no_e_w_exit = ("  @  ")
 s_exit = ("  |  \n  #  ")
 no_s_exit = ("    \n     ")
-nope = ("You can't go that way "+ hero.name + "!\n")
 
+#Start of Movement
 hero.name = raw_input("You bravely enter the first floor of the tower. What is your name, hero?")
 console.clear()
 while (hero.moving == "moving"):
+	#Getting Hero Position
 	if (hero.x_pos == 0 and hero.y_pos == 0):
 		Room = ent
 	elif (hero.x_pos == 1 and hero.y_pos == 0):
@@ -72,6 +76,7 @@ while (hero.moving == "moving"):
 		Room = lib
 	else:
 		Room = gal
+	#Display Prompt
 	print(Room.name) + ":\n"
 	print(Room.description) + "\n"
 	if (Room.n_exit == True):
@@ -90,6 +95,7 @@ while (hero.moving == "moving"):
 		print(s_exit) + "\n"
 	else:
 		print(no_s_exit) + "\n"
+	#Input and Movement
 	action = raw_input("Which way will you go, " + hero.name + "?\n (n)orth, (s)outh, (east), (w)est, or e(x)it.")
 	console.clear()
 	if (action == "n" and Room.n_exit == True):
@@ -103,7 +109,7 @@ while (hero.moving == "moving"):
 	elif (action == "x"):
 		break
 	else:
-		print(nope)
+		print("You can't go that way, " + hero.name + "!")
 
 console.clear()
 print("Thanks for walking around the first floor of the tower, " + hero.name + "!")	
